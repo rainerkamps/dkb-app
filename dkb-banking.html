@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DKB</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DKB">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#EEF2F7;color:#1a1a1a;min-height:100vh;overflow-x:hidden}
+
+/* ── PIN SCREEN ── */
+#pinScreen{position:fixed;inset:0;background:#EEF2F7;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.pin-logo{font-size:36px;font-weight:800;color:#1469C8;letter-spacing:3px}
+.pin-title{font-size:15px;color:#666;margin-top:-24px}
+.pin-dots{display:flex;gap:16px}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid #1469C8;transition:background .15s}
+.pin-dot.filled{background:#1469C8}
+.pin-keypad{display:grid;grid-template-columns:repeat(3,72px);gap:12px}
+.pin-key{width:72px;height:72px;border-radius:50%;border:none;background:#fff;font-size:22px;font-weight:500;color:#1a1a1a;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:background .1s}
+.pin-key:active{background:#dde8f8}
+.pin-key.del{font-size:18px;color:#1469C8}
+.pin-error{color:#d93025;font-size:13px;min-height:18px}
+
+/* ── SHARED ── */
+.screen{display:none;flex-direction:column;min-height:100vh}
+.screen.active{display:flex}
+
+/* ── HOME SCREEN ── */
+#homeScreen{background:#EEF2F7}
+.home-header{padding:16px 20px 8px;display:flex;justify-content:center;align-items:center;position:relative}
+.home-header-title{font-size:17px;color:#888;font-weight:400}
+.home-header-profile{position:absolute;right:20px;width:34px;height:34px;border-radius:50%;background:#1469C8;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600}
+.total-balance-wrap{padding:20px 20px 8px}
+.total-balance-amount{font-size:34px;font-weight:700;display:flex;align-items:center;gap:10px}
+.eye-icon{color:#888;font-size:20px;cursor:pointer}
+.total-balance-label{font-size:14px;color:#1469C8;margin-top:4px;font-weight:500}
+
+.notice-card{margin:12px 16px;background:#fff;border-radius:14px;padding:16px;font-size:13px;color:#555}
+.notice-card .notice-title{font-size:12px;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.notice-card .notice-head{font-weight:700;color:#1a1a1a;margin-bottom:6px;font-size:14px}
+.dots-row{display:flex;justify-content:center;gap:6px;margin:8px 0 4px}
+.dot-ind{width:7px;height:7px;border-radius:50%;background:#ccc}
+.dot-ind.active{background:#1469C8}
+
+.account-section{padding:0 16px 8px}
+.account-section-header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 10px}
+.account-section-name{font-size:16px;font-weight:700;letter-spacing:.5px}
+.account-section-total{font-size:15px;color:#666;font-weight:500}
+.account-section-toggle{width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+
+.account-row{background:#fff;border-radius:14px;padding:16px;margin-bottom:8px;cursor:pointer;transition:background .1s}
+.account-row:active{background:#f5f8ff}
+.account-row-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
+.account-row-icon{width:44px;height:44px;border-radius:12px;background:#EEF2F7;display:flex;align-items:center;justify-content:center;font-size:20px;margin-right:12px;flex-shrink:0}
+.account-row-info{flex:1}
+.account-row-name{font-size:16px;font-weight:600}
+.account-row-iban{font-size:12px;color:#888;margin-top:2px}
+.account-row-balance{font-size:16px;font-weight:600;text-align:right}
+.account-row-body{display:flex;align-items:center}
+.account-row-actions{display:flex;gap:8px;margin-top:12px}
+.btn-transfer{background:#1469C8;color:#fff;border:none;border-radius:10px;padding:9px 20px;font-size:14px;font-weight:600;cursor:pointer}
+.btn-more{background:#EEF2F7;color:#1469C8;border:none;border-radius:10px;padding:9px 20px;font-size:14px;font-weight:600;cursor:pointer}
+
+/* ── DETAIL SCREEN ── */
+#detailScreen{background:#EEF2F7}
+.detail-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px}
+.detail-back{font-size:15px;color:#1469C8;cursor:pointer;display:flex;align-items:center;gap:4px}
+.detail-title{font-size:17px;font-weight:600}
+.detail-search-btn{font-size:22px;color:#888;cursor:pointer}
+
+.detail-balance-card{background:#fff;border-radius:14px;margin:8px 16px;padding:20px}
+.detail-iban-label{font-size:12px;color:#888;margin-bottom:4px}
+.detail-iban{font-size:15px;color:#1a1a1a;margin-bottom:14px;font-weight:500}
+.detail-balance-label{font-size:13px;color:#888;margin-bottom:4px}
+.detail-balance-amount{font-size:32px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.info-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:13px;color:#888;cursor:pointer}
+.detail-actions{display:flex;gap:8px}
+.btn-detail-transfer{background:#1469C8;color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer}
+.btn-detail-details{background:#EEF2F7;color:#1469C8;border:none;border-radius:10px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer}
+
+.tx-section{padding:0 16px}
+.tx-section-label{font-size:15px;font-weight:700;margin:16px 0 8px}
+.tx-group-card{background:#fff;border-radius:14px;margin-bottom:8px;overflow:hidden}
+.tx-entry{display:flex;align-items:center;padding:14px 16px;gap:12px;border-bottom:1px solid #f0f0f0}
+.tx-entry:last-child{border-bottom:none}
+.tx-entry-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tx-entry-body{flex:1;min-width:0}
+.tx-entry-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tx-entry-sub{font-size:12px;color:#888;margin-top:1px}
+.tx-entry-amount{font-size:15px;font-weight:600;flex-shrink:0;text-align:right}
+.tx-entry-amount.pos{color:#00875A}
+.tx-entry-amount.pos-badge{background:#e6f7f0;color:#00875A;padding:3px 8px;border-radius:20px;font-size:14px;font-weight:600}
+.tx-entry-amount.neg{color:#1a1a1a}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:56px;background:#fff;border-top:1px solid #e8e8e8;display:flex;justify-content:space-around;align-items:center;z-index:50}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#aaa;cursor:pointer;flex:1}
+.nav-item.active{color:#1469C8}
+.nav-icon{font-size:22px}
+.spacer{height:70px}
+</style>
+</head>
+<body>
+
+<!-- PIN SCREEN -->
+<div id="pinScreen">
+  <div class="pin-logo">DKB</div>
+  <div class="pin-title">Bitte PIN eingeben</div>
+  <div class="pin-dots">
+    <div class="pin-dot" id="d0"></div>
+    <div class="pin-dot" id="d1"></div>
+    <div class="pin-dot" id="d2"></div>
+    <div class="pin-dot" id="d3"></div>
+    <div class="pin-dot" id="d4"></div>
+  </div>
+  <div class="pin-error" id="pinError"></div>
+  <div class="pin-keypad">
+    <button class="pin-key" onclick="pinKey('1')">1</button>
+    <button class="pin-key" onclick="pinKey('2')">2</button>
+    <button class="pin-key" onclick="pinKey('3')">3</button>
+    <button class="pin-key" onclick="pinKey('4')">4</button>
+    <button class="pin-key" onclick="pinKey('5')">5</button>
+    <button class="pin-key" onclick="pinKey('6')">6</button>
+    <button class="pin-key" onclick="pinKey('7')">7</button>
+    <button class="pin-key" onclick="pinKey('8')">8</button>
+    <button class="pin-key" onclick="pinKey('9')">9</button>
+    <button class="pin-key" style="visibility:hidden"></button>
+    <button class="pin-key" onclick="pinKey('0')">0</button>
+    <button class="pin-key del" onclick="pinDel()">⌫</button>
+  </div>
+</div>
+
+<!-- HOME SCREEN -->
+<div id="homeScreen" class="screen">
+  <div class="home-header">
+    <div class="home-header-title">Home</div>
+    <div class="home-header-profile">EB</div>
+  </div>
+  <div class="total-balance-wrap">
+    <div class="total-balance-amount">735.090,33 € <span class="eye-icon">👁</span></div>
+    <div class="total-balance-label">Total Balance (2/2) ›</div>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-title">Service Notice</div>
+    <div class="notice-head">⚙️ Geplante Wartung ⚙️</div>
+    Ab ca. 12 Uhr führen wir Wartungsarbeiten durch. In dieser Zeit sind App, Online-Banking und Brokerage nicht oder nur eingeschränkt erreichbar. Ab ca. 18 Uhr können Sie sich wieder einloggen. Danke für Ihr Verständnis!
+  </div>
+  <div class="dots-row">
+    <div class="dot-ind active"></div>
+    <div class="dot-ind"></div>
+    <div class="dot-ind"></div>
+  </div>
+
+  <div class="account-section">
+    <div class="account-section-header">
+      <div class="account-section-name">ELISABETH BOCK</div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="account-section-total">735.090,33 €</div>
+        <div class="account-section-toggle">∧</div>
+      </div>
+    </div>
+
+    <!-- Girokonto -->
+    <div class="account-row" onclick="showDetail('giro')">
+      <div class="account-row-body">
+        <div class="account-row-icon">🏦</div>
+        <div class="account-row-info">
+          <div class="account-row-name">Girokonto</div>
+          <div class="account-row-iban">DE08 1203 0000 1066 1120 51</div>
+        </div>
+        <div class="account-row-balance">221.080,87 €</div>
+      </div>
+      <div class="account-row-actions">
+        <button class="btn-transfer" onclick="event.stopPropagation()">Transfer</button>
+        <button class="btn-more" onclick="event.stopPropagation()">More</button>
+      </div>
+    </div>
+
+    <!-- Tagesgeld -->
+    <div class="account-row" onclick="showDetail('tages')">
+      <div class="account-row-body">
+        <div class="account-row-icon">🐷</div>
+        <div class="account-row-info">
+          <div class="account-row-name">Tagesgeld</div>
+          <div class="account-row-iban">DE09 1203 0000 1303 9237 32</div>
+        </div>
+        <div class="account-row-balance">514.009,46 €</div>
+      </div>
+    </div>
+
+    <!-- Depot -->
+    <div class="account-row">
+      <div class="account-row-body">
+        <div class="account-row-icon">📈</div>
+        <div class="account-row-info">
+          <div class="account-row-name">Depot Elisabeth Bock</div>
+          <div class="account-row-iban">503516973</div>
+        </div>
+        <div class="account-row-balance">0,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="bottom-nav">
+    <div class="nav-item active"><span class="nav-icon">🏠</span>Home</div>
+    <div class="nav-item"><span class="nav-icon">💳</span>Cards</div>
+    <div class="nav-item"><span class="nav-icon">↑</span>Orders</div>
+    <div class="nav-item"><span class="nav-icon">⊞</span>Products</div>
+    <div class="nav-item"><span class="nav-icon">👤</span>Profile</div>
+  </div>
+</div>
+
+<!-- DETAIL SCREEN -->
+<div id="detailScreen" class="screen">
+  <div class="detail-header">
+    <div class="detail-back" onclick="showHome()">‹ Home</div>
+    <div class="detail-title" id="detailTitle">Girokonto</div>
+    <div class="detail-search-btn">🔍</div>
+  </div>
+
+  <div class="detail-balance-card">
+    <div class="detail-iban-label">IBAN</div>
+    <div class="detail-iban" id="detailIban">DE08 1203 0000 1066 1120 51</div>
+    <div class="detail-balance-label">Account balance</div>
+    <div class="detail-balance-amount">
+      <span id="detailBalance">221.080,87 €</span>
+      <div class="info-icon">i</div>
+    </div>
+    <div class="detail-actions" id="detailActions">
+      <button class="btn-detail-transfer">Transfer</button>
+      <button class="btn-detail-details">Details</button>
+    </div>
+  </div>
+
+  <div class="tx-section" id="txSection"></div>
+  <div class="spacer"></div>
+
+  <div class="bottom-nav">
+    <div class="nav-item active"><span class="nav-icon">🏠</span>Home</div>
+    <div class="nav-item"><span class="nav-icon">💳</span>Cards</div>
+    <div class="nav-item"><span class="nav-icon">↑</span>Orders</div>
+    <div class="nav-item"><span class="nav-icon">⊞</span>Products</div>
+    <div class="nav-item"><span class="nav-icon">👤</span>Profile</div>
+  </div>
+</div>
+
+<script>
+// ── PIN ──────────────────────────────────────────────────────────────
+const CORRECT_PIN = '55665';
+let pinEntry = '';
+
+function pinKey(d) {
+  if (pinEntry.length >= 5) return;
+  pinEntry += d;
+  updateDots();
+  if (pinEntry.length === 5) {
+    setTimeout(() => {
+      if (pinEntry === CORRECT_PIN) {
+        document.getElementById('pinScreen').style.display = 'none';
+        document.getElementById('homeScreen').classList.add('active');
+      } else {
+        document.getElementById('pinError').textContent = 'Falsche PIN. Bitte erneut versuchen.';
+        pinEntry = '';
+        updateDots();
+      }
+    }, 120);
+  }
+}
+function pinDel() {
+  pinEntry = pinEntry.slice(0, -1);
+  document.getElementById('pinError').textContent = '';
+  updateDots();
+}
+function updateDots() {
+  for (let i = 0; i < 5; i++) {
+    document.getElementById('d' + i).classList.toggle('filled', i < pinEntry.length);
+  }
+}
+
+// ── DATA ──────────────────────────────────────────────────────────────
+// [datum, empfaenger, verwendungszweck, richtung, betrag]
+const giroTx = [
+  ["04.06.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.91],
+  ["02.06.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-17.55],
+  ["01.06.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["01.06.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["29.05.26","Renten Service","RV-Rente 06.2026","Eingang",1355.65],
+  ["28.05.26","congstar","Rechnung 7659303468","Ausgang",-5],
+  ["26.05.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-30.76],
+  ["26.05.26","E.ON Energie","Abschlag Strom Mai 2026","Ausgang",-45],
+  ["26.05.26","ALDI","Girokartenumsatz","Ausgang",-28.56],
+  ["21.05.26","Vodafone West","Rechnung Mai 2026","Ausgang",-47.98],
+  ["18.05.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-17.98],
+  ["15.05.26","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["11.05.26","ALDI","Girokartenumsatz","Ausgang",-19.66],
+  ["05.05.26","ROSSMANN","Girokartenumsatz","Ausgang",-31.59],
+  ["04.05.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-4.97],
+  ["04.05.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["04.05.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["30.04.26","Renten Service","RV-Rente 05.2026","Eingang",1355.65],
+  ["28.04.26","congstar","Rechnung 7653579394","Ausgang",-5],
+  ["27.04.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-11.99],
+  ["23.04.26","E.ON Energie","Abschlag Strom April 2026","Ausgang",-45],
+  ["21.04.26","KOSMOS APOTHEKE","Girokartenumsatz","Ausgang",-6.25],
+  ["21.04.26","Vodafone West","Rechnung April 2026","Ausgang",-47.98],
+  ["15.04.26","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["13.04.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-26.75],
+  ["07.04.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.33],
+  ["01.04.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["01.04.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["31.03.26","Renten Service","RV-Rente 04.2026","Eingang",1355.65],
+  ["31.03.26","ALDI","Girokartenumsatz","Ausgang",-51.24],
+  ["26.03.26","congstar","Rechnung 7647880553","Ausgang",-5],
+  ["25.03.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.58],
+  ["24.03.26","E.ON Energie","Abschlag Strom März 2026","Ausgang",-45],
+  ["23.03.26","STADTKASSE KÖLN","724355607875","Ausgang",-23.5],
+  ["23.03.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-30.29],
+  ["19.03.26","Vodafone West","Rechnung März 2026","Ausgang",-47.98],
+  ["16.03.26","Westdt. Rundfunk","Rundfunkbeitrag 02–04.2026","Ausgang",-55.08],
+  ["16.03.26","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["09.03.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-35.04],
+  ["02.03.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["02.03.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["27.02.26","Renten Service","RV-Rente 03.2026","Eingang",1355.65],
+  ["25.02.26","congstar","Rechnung 7642200518","Ausgang",-5],
+  ["24.02.26","E.ON Energie","Abschlag Strom Feb 2026","Ausgang",-45],
+  ["19.02.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-13.73],
+  ["19.02.26","Vodafone West","Rechnung Feb 2026","Ausgang",-47.98],
+  ["16.02.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-40.54],
+  ["16.02.26","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["10.02.26","ALDI","Girokartenumsatz","Ausgang",-4.27],
+  ["09.02.26","Rainer Kamps","20 Euro Charlo und Marie Zeugnis","Ausgang",-40],
+  ["02.02.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-19.67],
+  ["02.02.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["02.02.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["02.02.26","VHV Versicherung","Haftpflicht 2026/27","Ausgang",-73.79],
+  ["30.01.26","Renten Service","RV-Rente 02.2026","Eingang",1355.65],
+  ["30.01.26","congstar","Rechnung 7636539357","Ausgang",-5],
+  ["23.01.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-29.94],
+  ["23.01.26","E.ON Energie","Abschlag Strom Jan 2026","Ausgang",-45],
+  ["21.01.26","Vodafone West","Rechnung Jan 2026","Ausgang",-47.98],
+  ["19.01.26","DKB AG","Entgelt Girokarte 2026","Ausgang",-11.88],
+  ["15.01.26","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["07.01.26","E.ON Energie","Jahresabrechnung 2025","Ausgang",-42.65],
+  ["02.01.26","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-18.07],
+  ["02.01.26","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["02.01.26","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["30.12.25","Renten Service","RV-Rente 01.2026","Eingang",1355.65],
+  ["29.12.25","congstar","Rechnung 7630829707","Ausgang",-5],
+  ["29.12.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-25.23],
+  ["23.12.25","E.ON Energie","Abschlag Strom Dez 2025","Ausgang",-43],
+  ["22.12.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-34.09],
+  ["22.12.25","REWE SAGT DANKE","Bargeldauszahlung 150,00 EUR","Ausgang",-150.99],
+  ["22.12.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-42.87],
+  ["18.12.25","Vodafone West","Rechnung Dez 2025","Ausgang",-47.98],
+  ["15.12.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-35.06],
+  ["15.12.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["15.12.25","Westdt. Rundfunk","Rundfunkbeitrag 11.2025–01.2026","Ausgang",-55.08],
+  ["12.12.25","Rainer Kamps / Katrin","Weihnachtsgeschenk Charlotte Marie","Ausgang",-120],
+  ["08.12.25","REWE SAGT DANKE","Bargeldauszahlung 100,00 EUR","Ausgang",-141.12],
+  ["03.12.25","AppelrathCüpper Köln","Bekleidung","Ausgang",-179],
+  ["01.12.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-29.05],
+  ["01.12.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.017,38","Ausgang",-1017.38],
+  ["01.12.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["28.11.25","Renten Service","RV-Rente 12.2025","Eingang",1355.65],
+  ["26.11.25","congstar","Rechnung 7625193113","Ausgang",-5],
+  ["25.11.25","E.ON Energie","Abschlag Strom Nov 2025","Ausgang",-43],
+  ["24.11.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.95],
+  ["21.11.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.51],
+  ["20.11.25","Vodafone West","Rechnung Nov 2025","Ausgang",-47.98],
+  ["17.11.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["13.11.25","REWE SAGT DANKE","Bargeldauszahlung 200,00 EUR","Ausgang",-213.43],
+  ["10.11.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.94],
+  ["07.11.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-10.39],
+  ["03.11.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-30.01],
+  ["03.11.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["03.11.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 1.768,54","Ausgang",-1768.54],
+  ["31.10.25","Renten Service","RV-Rente 11.2025","Eingang",1355.65],
+  ["28.10.25","congstar","Rechnung 7619626665","Ausgang",-5],
+  ["23.10.25","E.ON Energie","Abschlag Strom Okt 2025","Ausgang",-43],
+  ["21.10.25","Vodafone West","Rechnung Okt 2025","Ausgang",-47.98],
+  ["16.10.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-12.26],
+  ["15.10.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["08.10.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-9.42],
+  ["06.10.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-12.88],
+  ["01.10.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.05],
+  ["01.10.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["01.10.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["30.09.25","Renten Service","RV-Rente 10.2025","Eingang",1355.65],
+  ["29.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-13.81],
+  ["25.09.25","VENUS APOTHEKE","Girokartenumsatz","Ausgang",-31.89],
+  ["25.09.25","LIDL","Girokartenumsatz","Ausgang",-10.65],
+  ["25.09.25","congstar","Rechnung 7614132381","Ausgang",-5],
+  ["23.09.25","E.ON Energie","Abschlag Strom Sep 2025","Ausgang",-43],
+  ["22.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-26.79],
+  ["18.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-21.92],
+  ["18.09.25","Vodafone West","Rechnung Sep 2025","Ausgang",-52.04],
+  ["15.09.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["15.09.25","Westdt. Rundfunk","Rundfunkbeitrag 08–10.2025","Ausgang",-55.08],
+  ["12.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-17.2],
+  ["09.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-16.05],
+  ["08.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-28.69],
+  ["01.09.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.21],
+  ["01.09.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["01.09.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["29.08.25","Renten Service","RV-Rente 09.2025","Eingang",1355.65],
+  ["29.08.25","congstar","Rechnung 7609878642","Ausgang",-5],
+  ["26.08.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-25.92],
+  ["25.08.25","E.ON Energie","Abschlag Strom Aug 2025","Ausgang",-43],
+  ["22.08.25","ARKADEN APOTHEKE","Girokartenumsatz","Ausgang",-23.95],
+  ["22.08.25","REWE SAGT DANKE","Bargeldauszahlung 200,00 EUR","Ausgang",-225.93],
+  ["20.08.25","Vodafone West","Rechnung Aug 2025","Ausgang",-38.18],
+  ["18.08.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-59.6],
+  ["15.08.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["11.08.25","REWE SAGT DANKE","Bargeldauszahlung 200,00 EUR","Ausgang",-200.01],
+  ["11.08.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-29.91],
+  ["08.08.25","ROSSMANN","Girokartenumsatz","Ausgang",-3.99],
+  ["06.08.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-10.17],
+  ["04.08.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-24.31],
+  ["01.08.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["01.08.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["31.07.25","Renten Service","RV-Rente 08.2025","Eingang",1355.65],
+  ["30.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-34.31],
+  ["30.07.25","TOOM Baumarkt","Girokartenumsatz","Ausgang",-19.28],
+  ["28.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-15.17],
+  ["28.07.25","congstar","Rechnung 7603320627","Ausgang",-5],
+  ["24.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-40.71],
+  ["22.07.25","E.ON Energie","Abschlag Strom Juli 2025","Ausgang",-43],
+  ["21.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.45],
+  ["21.07.25","Vodafone West","Rechnung Juli 2025","Ausgang",-34.99],
+  ["17.07.25","Wohn.- u. Baug. Mieterschutz eG","Dividende 2024 – Elisabeth Bock 48,30","Eingang",48.3],
+  ["17.07.25","Wohn.- u. Baug. Mieterschutz eG","Dividende 2024 – Rainer Kamps 16,40","Eingang",16.4],
+  ["15.07.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["14.07.25","ALDI","Girokartenumsatz","Ausgang",-16.3],
+  ["09.07.25","ARKADEN APOTHEKE","Girokartenumsatz","Ausgang",-24.97],
+  ["09.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-25.41],
+  ["07.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-16.56],
+  ["04.07.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-24.01],
+  ["01.07.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["01.07.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["30.06.25","DM Drogerie","Bargeldauszahlung 200,00 EUR","Ausgang",-202.05],
+  ["30.06.25","Renten Service","RV-Rente 07.2025","Eingang",1337.04],
+  ["30.06.25","AVIA BLUM","Girokartenumsatz","Ausgang",-44.07],
+  ["26.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-33.9],
+  ["26.06.25","congstar","Rechnung 7598012084","Ausgang",-5],
+  ["25.06.25","VKS GbR","HB2H9BM-AA253070525","Ausgang",-35.1],
+  ["24.06.25","MATERNUS APOTHEKE","Girokartenumsatz","Ausgang",-8.49],
+  ["23.06.25","E.ON Energie","Abschlag Strom Juni 2025","Ausgang",-43],
+  ["23.06.25","Vodafone West","Rechnung Juni 2025","Ausgang",-37.97],
+  ["19.06.25","ARKADEN APOTHEKE","Girokartenumsatz","Ausgang",-25.99],
+  ["19.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-24.84],
+  ["17.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-21.05],
+  ["16.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-12.51],
+  ["16.06.25","Westdt. Rundfunk","Rundfunkbeitrag 05–07.2025","Ausgang",-55.08],
+  ["16.06.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["11.06.25","DM Drogerie","Girokartenumsatz","Ausgang",-10.85],
+  ["11.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-12.65],
+  ["10.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-27.15],
+  ["03.06.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-23.34],
+  ["02.06.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["02.06.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["30.05.25","Renten Service","RV-Rente 06.2025","Eingang",1309.78],
+  ["30.05.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-18.26],
+  ["27.05.25","congstar","Rechnung 7592586579","Ausgang",-5],
+  ["23.05.25","E.ON Energie","Abschlag Strom Mai 2025","Ausgang",-43],
+  ["21.05.25","Vodafone West","Rechnung Mai 2025","Ausgang",-37.57],
+  ["15.05.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["12.05.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-9.16],
+  ["09.05.25","Podologie Weilerswist","Girokartenumsatz","Ausgang",-58],
+  ["08.05.25","ARKADEN APOTHEKE","Girokartenumsatz","Ausgang",-24.97],
+  ["08.05.25","Schmitz Nittenwilm OHG","Girokartenumsatz","Ausgang",-13.45],
+  ["07.05.25","HIT Köln","Bargeldauszahlung 200,00 EUR","Ausgang",-237.68],
+  ["02.05.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["02.05.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["30.04.25","Renten Service","RV-Rente 05.2025","Eingang",1309.78],
+  ["30.04.25","Fleetpool GmbH","Schadensrechnung Mitsubishi Space Star","Ausgang",-600],
+  ["30.04.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-21.32],
+  ["29.04.25","congstar","Rechnung 7587275128","Ausgang",-5],
+  ["28.04.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-26.11],
+  ["25.04.25","Stortz Sanitätshaus","Girokartenumsatz","Ausgang",-38],
+  ["23.04.25","TOOM Baumarkt","Girokartenumsatz","Ausgang",-12.95],
+  ["23.04.25","RATHAUS-APOTHEKE","Girokartenumsatz","Ausgang",-17.84],
+  ["23.04.25","E.ON Energie","Abschlag Strom April 2025","Ausgang",-43],
+  ["22.04.25","BÄREN APOTHEKE","Girokartenumsatz","Ausgang",-17.99],
+  ["22.04.25","star Tankstelle","Girokartenumsatz","Ausgang",-43.97],
+  ["22.04.25","ALDI","Girokartenumsatz","Ausgang",-13.6],
+  ["22.04.25","Vodafone West","Rechnung April 2025","Ausgang",-39.76],
+  ["16.04.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-47.87],
+  ["15.04.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["14.04.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-47.74],
+  ["08.04.25","ALDI","Girokartenumsatz","Ausgang",-23.04],
+  ["04.04.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-17.06],
+  ["01.04.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["01.04.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["31.03.25","Renten Service","RV-Rente 04.2025","Eingang",1309.78],
+  ["28.03.25","REWE SAGT DANKE","Bargeldauszahlung 100,00 EUR","Ausgang",-125.92],
+  ["27.03.25","congstar","Rechnung 7581979967","Ausgang",-5],
+  ["25.03.25","E.ON Energie","Abschlag Strom März 2025","Ausgang",-37],
+  ["24.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-22.5],
+  ["20.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.49],
+  ["19.03.25","Vodafone West","Rechnung März 2025","Ausgang",-40.16],
+  ["17.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-31.45],
+  ["17.03.25","Westdt. Rundfunk","Rundfunkbeitrag 02–04.2025","Ausgang",-55.08],
+  ["17.03.25","RAINER KAMPS","Miete Auto Kia FAAREN","Ausgang",-297],
+  ["07.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-14.49],
+  ["04.03.25","ROSSMANN","Girokartenumsatz","Ausgang",-3.4],
+  ["03.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-21.4],
+  ["03.03.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-34.33],
+  ["03.03.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["03.03.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["28.02.25","Renten Service","RV-Rente 03.2025","Eingang",1309.78],
+  ["26.02.25","congstar","Rechnung 7576699434","Ausgang",-5],
+  ["25.02.25","ROSSMANN","Girokartenumsatz","Ausgang",-7.44],
+  ["25.02.25","E.ON Energie","Abschlag Strom Feb 2025","Ausgang",-37],
+  ["24.02.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-17.43],
+  ["24.02.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-19.47],
+  ["20.02.25","Vodafone West","Rechnung Feb 2025","Ausgang",-38.96],
+  ["17.02.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-37.62],
+  ["17.02.25","RAINER KAMPS","Miete Auto Fleetpool Mitsubishi","Ausgang",-297],
+  ["10.02.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.93],
+  ["03.02.25","REWE SAGT DANKE","Bargeldauszahlung 200,00 EUR","Ausgang",-220.27],
+  ["03.02.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["03.02.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["31.01.25","Renten Service","RV-Rente 02.2025","Eingang",1318],
+  ["31.01.25","congstar","Rechnung 7571433387","Ausgang",-5],
+  ["31.01.25","VHV Versicherung","Haftpflicht 2025/26","Ausgang",-67.31],
+  ["31.01.25","Rainer Kamps","Tanken 30. Januar","Ausgang",-53.39],
+  ["24.01.25","E.ON Energie","Abschlag Strom Jan 2025","Ausgang",-37],
+  ["22.01.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-27.39],
+  ["21.01.25","Vodafone West","Rechnung Jan 2025","Ausgang",-50.31],
+  ["21.01.25","BEKLEIDUNGSHAUS SINN","Girokartenumsatz","Ausgang",-60.3],
+  ["20.01.25","SINN GMBH","Girokartenumsatz","Ausgang",-99.95],
+  ["20.01.25","Thalia","Girokartenumsatz","Ausgang",-24],
+  ["17.01.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-22.84],
+  ["15.01.25","RAINER KAMPS","Miete Auto Fleetpool Mitsubishi","Ausgang",-389],
+  ["13.01.25","DKB AG","Entgelt Girokarte 2025","Ausgang",-11.88],
+  ["06.01.25","KiK","Girokartenumsatz","Ausgang",-41.96],
+  ["06.01.25","TCHIBO","Girokartenumsatz","Ausgang",-25.29],
+  ["06.01.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-20.73],
+  ["02.01.25","E.ON Energie","Jahresabrechnung 2024 – Erstattung","Eingang",54.09],
+  ["02.01.25","REWE SAGT DANKE","Girokartenumsatz","Ausgang",-40.79],
+  ["02.01.25","Wohn.- u. Baug. Mieterschutz eG","Miete 6050/42/11/72 – 916,36","Ausgang",-916.36],
+  ["02.01.25","Wohn.- u. Baug. Mieterschutz eG","6047/42/60/93 – 40,00","Ausgang",-40],
+  ["01.01.25","Kontostand 01.01.2025","Anfangssaldo","Info",229635.63],
+];
+
+const tagesTx = [
+  ["01.04.26","DKB AG","Abrechnung 31.03.2026 – Zinsgutschrift netto","Eingang",944.35],
+  ["30.12.25","DKB AG","Abrechnung 30.12.2025 – Zinsgutschrift netto","Eingang",942.63],
+  ["01.10.25","DKB AG","Abrechnung 30.09.2025 – Zinsgutschrift netto","Eingang",940.89],
+  ["01.07.25","DKB AG","Abrechnung 30.06.2025 – Zinsgutschrift netto","Eingang",1047.02],
+  ["01.04.25","DKB AG","Abrechnung 31.03.2025 – Zinsgutschrift netto","Eingang",1404.57],
+  ["01.01.25","Kontostand 01.01.2025","Anfangssaldo","Info",508730.00],
+];
+
+// ── HELPERS ──────────────────────────────────────────────────────────
+function fmtAmt(n, badge=false) {
+  const s = Math.abs(n).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+  if (n > 0) {
+    if (badge) return `<span class="tx-entry-amount pos-badge">+${s}</span>`;
+    return `<span class="tx-entry-amount pos">+${s}</span>`;
+  }
+  return `<span class="tx-entry-amount neg">-${s}</span>`;
+}
+
+function getIcon(name, dir) {
+  const n = name.toLowerCase();
+  if (n.includes('rewe')||n.includes('aldi')||n.includes('lidl')||n.includes('hit ')||n.includes('toom')) return {i:'🛒',bg:'#fff3e0'};
+  if (n.includes('miete')||n.includes('mieterschutz')||n.includes('wohn')) return {i:'🏠',bg:'#e8f5e9'};
+  if (n.includes('renten')||n.includes('rente')) return {i:'💰',bg:'#e3f2fd'};
+  if (n.includes('vodafone')||n.includes('congstar')) return {i:'📱',bg:'#fce4ec'};
+  if (n.includes('e.on')||n.includes('energie')||n.includes('avia')||n.includes('tankstelle')) return {i:'⚡',bg:'#fffde7'};
+  if (n.includes('vhv')||n.includes('versicherung')) return {i:'🛡️',bg:'#ede7f6'};
+  if (n.includes('rundfunk')||n.includes('wdr')) return {i:'📺',bg:'#e0f7fa'};
+  if (n.includes('apotheke')||n.includes('sanit')||n.includes('rossmann')||n.includes('dm drog')||n.includes('podologie')) return {i:'💊',bg:'#fbe9e7'};
+  if (n.includes('dkb')) return {i:'🏦',bg:'#e3f2fd'};
+  if (n.includes('kamps')||n.includes('auto')||n.includes('kia')||n.includes('faaren')||n.includes('fleetpool')) return {i:'🚗',bg:'#f3e5f5'};
+  if (n.includes('stadtkas')) return {i:'🏛️',bg:'#efebe9'};
+  if (n.includes('thalia')) return {i:'📚',bg:'#fff3e0'};
+  if (n.includes('tchibo')) return {i:'☕',bg:'#efebe9'};
+  if (n.includes('kik')||n.includes('sinn')||n.includes('bekleidung')||n.includes('appel')) return {i:'👗',bg:'#fce4ec'};
+  if (n.includes('dividende')) return {i:'💵',bg:'#e8f5e9'};
+  if (n.includes('geschenk')||n.includes('weihnacht')) return {i:'🎁',bg:'#fce4ec'};
+  if (dir==='Info') return {i:'🏁',bg:'#f0f4ff'};
+  if (dir==='Eingang') return {i:'⬇️',bg:'#e8f5e9'};
+  return {i:'💳',bg:'#f3f4f6'};
+}
+
+function parseDate(d) {
+  const [dd,mm,yy] = d.split('.');
+  return new Date(`20${yy}-${mm}-${dd}`);
+}
+
+function groupTx(txs) {
+  const today = '08.06.26';
+  const todayDate = parseDate(today);
+  const sevenDays = new Date(todayDate); sevenDays.setDate(sevenDays.getDate()-7);
+
+  const groups = {};
+  txs.forEach(t => {
+    const d = parseDate(t[0]);
+    let label;
+    if (t[0] === today) label = 'Today';
+    else if (d >= sevenDays && d < todayDate) label = 'Last 7 days';
+    else {
+      label = d.toLocaleString('de-DE',{month:'long',year:'numeric'});
+    }
+    if (!groups[label]) groups[label] = [];
+    groups[label].push(t);
+  });
+  return groups;
+}
+
+function renderTx(txs) {
+  const groups = groupTx(txs);
+  let html = '';
+  const order = ['Today','Last 7 days'];
+  const keys = [...order.filter(k=>groups[k]), ...Object.keys(groups).filter(k=>!order.includes(k))];
+  keys.forEach(label => {
+    html += `<div class="tx-section-label">${label}</div><div class="tx-group-card">`;
+    groups[label].forEach(t => {
+      const {i,bg} = getIcon(t[1],t[3]);
+      const isIn = t[4]>0;
+      if (t[3]==='Info') {
+        const val = Math.abs(t[4]).toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+        html += `<div class="tx-entry" style="background:#f0f4ff;border-radius:0">
+          <div class="tx-entry-icon" style="background:#dde8ff">${i}</div>
+          <div class="tx-entry-body">
+            <div class="tx-entry-name" style="color:#1469C8;font-weight:700">${t[1]}</div>
+            <div class="tx-entry-sub">${t[2]}</div>
+          </div>
+          <span class="tx-entry-amount" style="color:#1469C8;font-weight:700">${val}</span>
+        </div>`;
+      } else {
+        const sub = t[0] + ' • ' + (isIn?'Credit':'Direct debit');
+        const amtHtml = (isIn && label==='Last 7 days') ? fmtAmt(t[4],true) : fmtAmt(t[4]);
+        html += `<div class="tx-entry">
+          <div class="tx-entry-icon" style="background:${bg}">${i}</div>
+          <div class="tx-entry-body">
+            <div class="tx-entry-name">${t[1]}</div>
+            <div class="tx-entry-sub">${sub}</div>
+          </div>
+          ${amtHtml}
+        </div>`;
+      }
+    });
+    html += `</div>`;
+  });
+  return html;
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────
+function showHome() {
+  document.getElementById('detailScreen').classList.remove('active');
+  document.getElementById('homeScreen').classList.add('active');
+}
+
+function showDetail(which) {
+  document.getElementById('homeScreen').classList.remove('active');
+  const ds = document.getElementById('detailScreen');
+  ds.classList.add('active');
+
+  if (which === 'giro') {
+    document.getElementById('detailTitle').textContent = 'Girokonto';
+    document.getElementById('detailIban').textContent = 'DE08 1203 0000 1066 1120 51';
+    document.getElementById('detailBalance').textContent = '221.080,87 €';
+    document.getElementById('detailActions').innerHTML = '<button class="btn-detail-transfer">Transfer</button><button class="btn-detail-details">Details</button>';
+    document.getElementById('txSection').innerHTML = renderTx(giroTx);
+  } else {
+    document.getElementById('detailTitle').textContent = 'Tagesgeld';
+    document.getElementById('detailIban').textContent = 'DE09 1203 0000 1303 9237 32';
+    document.getElementById('detailBalance').textContent = '514.009,46 €';
+    document.getElementById('detailActions').innerHTML = '';
+    document.getElementById('txSection').innerHTML = renderTx(tagesTx);
+  }
+  ds.scrollTop = 0;
+}
+</script>
+</body>
+</html>
